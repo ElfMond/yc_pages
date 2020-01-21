@@ -30,13 +30,16 @@
         </div>
     </nav>
 
-    </div>
-    <div class="text-center">
-        <img src="IMG_0173.jpg" class="img-thumbnail" style="width: 700px" alt="...">
-        <img src="IMG_0249.jpg" class="img-thumbnail" style="width: 700px" alt="...">
-        <img src="IMG_5282.jpg" class="img-thumbnail" style="width: 700px" alt="...">
-        <img src="IMG_5311.jpg" class="img-thumbnail" style="width: 700px" alt="...">
-        <img src="IMG_8012.jpg" class="img-thumbnail" style="width: 700px" alt="...">
-    </div>
+    <div id="mygallery">
+      <?php
+          $directory="img/";
+          $images=glob($directory . "*.jpg");
+          $swipebox = "swipebox";
+          foreach($images as $image) {
+              echo "<a href=" .$image." class=".$swipebox."> <img alt=" . $directory . " src=". $image . " /></a>";
+          }
+      ?>
+      </div>
+    
 </body>
 </html>
